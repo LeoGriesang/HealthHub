@@ -1,0 +1,34 @@
+.header-bg {
+    background: #ffffff;
+    border-bottom: 2px solid #E5E5E5;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.header ul {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+.header .nav-principal a{
+    color: #2F2E41;
+    display: inline-block;
+    font: 400 1rem/1.5 "Poppins", sans-serif;
+    position: relative;
+}
+.header .nav-principal a::after{
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0%;
+    background: #F55151;
+    margin-top: 4px;
+    transition: 0.3s;
+    position: absolute
+}
+.header .nav-principal a:hover::after{
+    width: 100%;
+}
