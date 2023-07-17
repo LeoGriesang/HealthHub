@@ -5,3 +5,30 @@
     box-sizing: border-box;
     padding: 20px;
 }
+.botao {
+    display: inline-block;
+    background: linear-gradient(#FF7171, #F55151);
+    font: 600 0.85rem/1.5 "Poppins", sans-serif;
+    color: #500909;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    max-width: max-content;
+    border: 1px solid transparent;
+}
+.botao:hover {
+    background: linear-gradient(#FF6363, #D63131);
+    transition: 0.5s;
+}
+.botao.secundario {
+    background: #ffffff;
+    color: #2F2E41;
+    border: 1px solid #2F2E41;
+}
+.botao.secundario:hover {
+    background: #ffffff;
+    color: #F55151;
+    border: 1px solid #F55151;
+}

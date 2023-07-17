@@ -16,8 +16,9 @@
 .header .nav-principal a{
     color: #2F2E41;
     display: inline-block;
-    font: 400 1rem/1.5 "Poppins", sans-serif;
+    font: 400 0.85rem/1.5 "Poppins", sans-serif;
     position: relative;
+    text-transform: uppercase;
 }
 .header .nav-principal a::after{
     content: "";
@@ -31,4 +32,17 @@
 }
 .header .nav-principal a:hover::after{
     width: 100%;
+}
+@media (max-width: 850px) {
+    .header ul {
+        gap: 10px;
+    }
+    .nav-secundaria a {
+        font-size: 0.7rem;
+    }
+}
+@media (max-width: 750px) {
+    .nav-principal {
+        display: none;
+    }
 }
