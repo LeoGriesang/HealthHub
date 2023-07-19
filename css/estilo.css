@@ -4,3 +4,7 @@
 @import "./utilidades/componentes.css";
 
 @import "./home/introducao.css";
+
+@import "./home/caixas.css";
+
+@import "./home/perguntas.css";
