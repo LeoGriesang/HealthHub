@@ -93,13 +93,9 @@
     }
     .footer-info > img {
         padding-bottom: 20px;
+        width: 150px;
     }
     .footer p {
         margin-top: 10px;
-    }
-}
-@media (max-width: 800px) {
-    .footer-info > img {
-        width: 150px;
     }
 }
