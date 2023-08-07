@@ -6,58 +6,59 @@
    font: 400 1rem/1.3 "Poppins", Sans-serif; 
    padding-top: 40px;
 }
-.exercicios h1 {
+.exercicios h1{
+    font: 600 1.5rem/1.3 "Poppins", Sans-serif;
     color: #ffffff;
-   font: 400 1.5rem/1.3 "Poppins", Sans-serif; 
-   padding-top: 20px;
+    padding-top: 20px;
+    position: relative;
+    margin-left: 13px;
 }
-.fundo-cartoes {
-    background: #F2F2F2;
-    padding: 40px;
-    box-sizing: border-box;
+.exercicios h1::before{
+    content: "";
+    width: 30px;
+    height: 27px;
+    background: #FF7171;
+    display: block;
+    position: absolute;
+    bottom: 13px;
+    left: -13px;
+    z-index: -1;
+}
+.exercicios h1::after{
+    content: "";
+    width: 18px;
+    height: 24px;
+    background: url(../../img/arrow-turn-down.svg) no-repeat;
+    position: absolute;
+    left: 140px;
+    bottom: -8px;
+}
+.fundo-exercicios {
+    margin-top: 40px;
+    background: #f2f2f2;
     border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
+    grid-template-columns: 4fr 8fr;
+    gap: 20px;
 }
 .caixa-e {
-    width: 450px;
-    height: 120px;
+    width: 340px;
+    height: 100px;
     background-image: linear-gradient(to left, transparent 0%, #262626 70%), url(../../img/Exercicios/peito.jpg);
     background-size: cover;
-    text-align: left;
+    border-radius: 5px;
     display: flex;
     align-items: center;
-    border-radius: 5px;
     margin-bottom: 10px;
 }
 .caixa-e p {
-    padding-left: 20px;
     color: #ffffff;
     text-transform: uppercase;
+    text-align: left;
+    padding-left: 20px;
 }
-.conteudo {
-    height: 200px;
-    width: 450px;
-    background: #D9D9D9;
-    display: none;
-}
-.conteudo.ativo {
-    display: block;
-    animation: show .5s forwards;
-}
-
-@keyframes show {
-    from {
-        opacity: 0;
-        transform: translate3d(0, -30px, 0);
-    }
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
-}
-
 .caixa-e:nth-child(2) {
     background-image: linear-gradient(to left, transparent 0%, #262626 70%), url(../../img/Exercicios/biceps.jpg);
 }
@@ -72,4 +73,64 @@
 }
 .caixa-e:nth-child(6) {
     background-image: linear-gradient(to left, transparent 0%, #262626 70%), url(../../img/Exercicios/ombro.jpg);
+}
+.list-exercicios {
+    max-height: 440px;
+    overflow-y: auto;
+}
+.conteudo-exercicios {
+    background: #D9D9D9;
+    border-radius: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.conteudo-exercicios h4 {
+    justify-self: center;
+    grid-column: 1/-1;
+    font: 600 1rem/1.5 "Poppins", Sans-serif;
+    text-transform: uppercase;
+}
+.conteudo-exercicios ul {
+    justify-self: center;
+}
+.video {
+    border-radius: 5px;
+    justify-self: end;
+    width: 330px;
+}
+.conteudo-exercicios li {
+    padding: 10px;
+    color: #000000;
+    font: 400 0.85rem/1.2 "Poppins", Sans-serif;
+    position: relative;
+}
+.conteudo-exercicios li::before {
+    content: "";
+    width: 4px;
+    height: 10px;
+    background: #FF7171;
+    display: block;
+    position: absolute;
+    left: -4px;
+    bottom: 14px;
+}
+.js-exercicios {
+    display: none;
+}
+.js-exercicios.ativo {
+    display: grid;
+    animation: show .5s forwards;
+}
+@keyframes show {
+    from {
+        opacity: 0;
+        transform: translate3d(-30px, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
 }
