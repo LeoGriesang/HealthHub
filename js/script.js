@@ -1,20 +1,3 @@
-function ativaexercicios() {
-    
-    const divs = document.querySelectorAll('.caixa-e');
-    if(divs.length) {
-
-        function ativarConteudo(e) {
-            const div = e.currentTarget
-            div.nextElementSibling.classList.toggle('ativo');
-        }
-    
-        divs.forEach((div) => {
-            div.addEventListener('click', ativarConteudo);
-        });
-    }
-}  
-ativaexercicios();  
-
 
 function ativaReceitas() {
 
@@ -43,19 +26,43 @@ function ativaReceitas() {
 }
 ativaReceitas();
 
-const listaExer = document.querySelectorAll('.list-exercicios li');
-const exer = document.querySelectorAll('.js-exercicios');
+function ativaExercicios() {
 
-exer[0].classList.add('ativo');
-function ativaConteudoE(index) {
-    exer.forEach((exer) => {
-        exer.classList.remove('ativo');
-    })
-    exer[index].classList.add('ativo');
+    const listaExer = document.querySelectorAll('.list-exercicios li');
+    const exer = document.querySelectorAll('.js-exercicios');
+
+    if(listaExer.length && exer.length) {
+
+        exer[0].classList.add('ativo');
+        function ativaConteudoE(index) {
+            exer.forEach((exer) => {
+                exer.classList.remove('ativo');
+            })
+            exer[index].classList.add('ativo');
+        }
+
+        listaExer.forEach((Lexer, index) => {
+            Lexer.addEventListener('click', () => {
+                ativaConteudoE(index)
+            });
+        })
+    }    
 }
+ativaExercicios();
 
-listaExer.forEach((Lexer, index) => {
-    Lexer.addEventListener('click', () => {
-        ativaConteudoE(index)
-    });
-})
+function ativaPerguntas() {
+
+    const AccordionList = document.querySelectorAll('[data-accordion] dt');
+
+    if(AccordionList.length) {
+
+        function clicou(){
+            this.classList.toggle('ativo');
+            this.nextElementSibling.classList.toggle('ativo');
+        }
+        AccordionList.forEach((item) => {
+            item.addEventListener('click', clicou)
+        })
+    }    
+}  
+ativaPerguntas();  
