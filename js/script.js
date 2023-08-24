@@ -65,4 +65,15 @@ function ativaPerguntas() {
         })
     }    
 }  
-ativaPerguntas();  
+ativaPerguntas(); 
+
+const btnMobile = document.querySelector('.btn-mobile');
+const nav1 = document.querySelector("[data-nav='principal']");
+const nav2 = document.querySelector("[data-nav='secundaria']");
+
+btnMobile.addEventListener('click', handleClick)
+
+function handleClick() {
+    nav1.classList.toggle('ativo');
+    nav2.classList.toggle('ativo');
+}
